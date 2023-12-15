@@ -6,4 +6,10 @@ const {
   deleteAllKesme,
 } = require("./kesmeController");
 
-module.exports = { login, register, createKesme, deleteKesme, deleteAllKesme };
+const {
+  createOrder,
+  deleteOrder,
+  deleteAllOrder,
+} = require("./orderController");
+
+module.exports = { login, register, createKesme, deleteKesme, deleteAllKesme, createOrder, deleteOrder, deleteAllOrder };
