@@ -6,12 +6,13 @@ const createOrder = (req, res) => {
   insert({ ...req.body, userId: userId })
     .then(({ rows }) => res.status(httpStatus.OK).send(rows[0]))
     .catch((e) => {
-      console.log(e);
+      console.error("Error in createOrder:", e); // More detailed logging
       res
         .status(httpStatus.INTERNAL_SERVER_ERROR)
         .send({ error: "An error occurred." });
     });
 };
+
 
 const deleteOrder = (req, res) => {
   const userId = req.user.uuid;
