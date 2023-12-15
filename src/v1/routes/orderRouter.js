@@ -1,0 +1,12 @@
+const express = require("express");
+const router = express.Router();
+const { authenticate, validate, verify } = require("../middlewares");
+const { createOrder, deleteOrder, deleteAllOrder } = require("../controllers");
+const { getAllOrder } = require("../controllers/orderController");
+
+router.route("/").get(authenticate, getAllOrder);
+router.route("/").post(authenticate, createOrder);
+router.route("/:id").delete(authenticate, deleteOrder);
+router.route("/delete/all").delete(authenticate, deleteAllOrder);
+
+module.exports = router;
