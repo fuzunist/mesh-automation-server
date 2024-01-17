@@ -1,15 +1,23 @@
+
+
 const login = require("./loginController");
 const register = require("./registerController");
 const {
-  createKesme,
-  deleteKesme,
-  deleteAllKesme,
+ createKesme,
+ deleteKesme,
+ deleteAllKesme,
 } = require("./kesmeController");
 
+
 const {
-  createOrder,
-  deleteOrder,
-  deleteAllOrder,
+ createOrder,
+ updateOrder,
+ deleteOrder,
+ deleteAllOrder,
 } = require("./orderController");
 
-module.exports = { login, register, createKesme, deleteKesme, deleteAllKesme, createOrder, deleteOrder, deleteAllOrder };
+
+module.exports = { login, register, createKesme, deleteKesme, deleteAllKesme, createOrder, updateOrder, deleteOrder, deleteAllOrder };
+
+
+
